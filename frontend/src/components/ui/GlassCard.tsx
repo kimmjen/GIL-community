@@ -4,9 +4,15 @@ interface GlassCardProps {
   children: ReactNode
   className?: string
   size?: 'sm' | 'md' | 'lg' | 'xl'
+  variant?: 'default' | 'elevated' | 'outlined'
 }
 
-export default function GlassCard({ children, className = '', size = 'md' }: GlassCardProps) {
+export default function GlassCard({
+  children,
+  className = '',
+  size = 'md',
+  variant = 'default'
+}: GlassCardProps) {
   const sizeClasses = {
     sm: 'p-4',
     md: 'p-6', 
@@ -14,33 +20,22 @@ export default function GlassCard({ children, className = '', size = 'md' }: Gla
     xl: 'p-10'
   }
 
+  const variantClasses = {
+    default: 'bg-white border border-gray-200 shadow-sm hover:shadow-md',
+    elevated: 'bg-white shadow-lg border border-gray-100 hover:shadow-xl',
+    outlined: 'bg-white/50 border-2 border-gray-300 hover:bg-white'
+  }
+
   return (
     <div className={`
-      relative
-      backdrop-blur-xl bg-white/20 
-      border border-white/30 
-      rounded-2xl 
-      shadow-xl shadow-black/5
-      hover:bg-white/25 
-      hover:shadow-2xl hover:shadow-black/10
-      hover:border-white/40
-      hover:scale-[1.02]
-      transition-all duration-300
-      overflow-hidden
-      group
+      rounded-xl 
+      transition-all duration-200
+      hover:scale-[1.01]
       ${sizeClasses[size]}
+      ${variantClasses[variant]}
       ${className}
     `}>
-      {/* Gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-      
-      {/* Content */}
-      <div className="relative z-10">
-        {children}
-      </div>
-      
-      {/* Subtle border animation */}
-      <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-0 group-hover:opacity-100 animate-pulse"></div>
+      {children}
     </div>
   )
 }

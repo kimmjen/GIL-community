@@ -1,47 +1,54 @@
-# 🚀 GIL Community Platform
+# 🙏 길 공동체 플랫폼
 
-> 개발자들을 위한 통합 학습 및 커뮤니티 플랫폼
+> 온누리교회 청년부를 위한 신앙 공동체 플랫폼
 
 ## 📋 프로젝트 개요
 
-GIL Community는 개발자들이 함께 학습하고, 프로젝트를 진행하며, 멘토링을 받을 수 있는 종합적인 플랫폼입니다. 현대적인 Glassmorphism 디자인과 직관적인 사용자 경험을 제공합니다.
+길 공동체 플랫폼은 온누리교회 청년부가 함께 신앙을 나누고, 성장하며, 교제할 수 있는 종합적인 디지털 공간입니다. 깔끔하고 현대적인 디자인으로 청년들이 쉽게 사용할 수 있는 직관적인 사용자 경험을 제공합니다.
 
 ## ✨ 주요 기능
 
-### 📊 대시보드
-- 개인화된 학습 현황 및 통계
-- 최근 활동 요약
-- 빠른 액세스 블록
+### 🏠 대시보드
+- 개인 신앙 활동 현황 및 통계
+- 오늘의 말씀과 기도 제목
+- 이번 주 설교 및 다가오는 모임 안내
+- 성경 읽기 진도 및 주간 활동 요약
 
-### 🌐 커뮤니티
-- 개발 관련 포스트 및 토론
-- 주제별 토픽 관리
-- 멤버 프로필 및 네트워킹
+### 👥 공동체
+- 청년부 소식 및 공지사항
+- 간증, 기도 요청, 후기 게시글
+- 소그룹 안내 및 멤버 네트워킹
+- 다가오는 모임 일정
 
-### 📂 프로젝트 관리
-- 개인/팀 프로젝트 생성 및 관리
-- 진행률 추적 및 마일스톤
-- 협업 도구 통합
+### 🎤 설교
+- 주일 설교, 수요 예배, 특별 집회 설교 모음
+- 설교 듣기 및 다운로드 기능
+- 성경 구절별 설교 분류
+- 청년부 특별 시리즈
 
-### 📚 학습 시스템
-- 코딩 강의 및 튜토리얼
-- 학습 진행도 추적
-- 인증서 발급 및 관리
+### 📖 성경 읽기
+- 1년 성경 통독, 신약 100일 읽기 등 다양한 읽기 계획
+- 개인 읽기 진도 추적 및 연속 읽기 기록
+- 오늘의 말씀 및 묵상 노트
+- 다양한 성경 번역본 지원
 
-### 🏆 챌린지
-- 일일/주간 코딩 챌린지
-- 실시간 리더보드
-- 성취도 및 뱃지 시스템
+### 🙏 기도 제목
+- 개인 및 공동체 기도 요청
+- 기도 분류별 관리 (건강, 진로, 가족, 교회, 학업)
+- 응답받은 기도 간증
+- 정기 기도 시간 안내
 
-### 👥 멘토링
-- 전문가 멘토 매칭
-- 1:1 세션 예약 시스템
-- 멘토링 진행 상황 관리
+### 📅 모임 & 행사
+- 금요 기도회, 찬양 연습, 성경 스터디 등 정기 모임
+- 수련회, 특별 집회 등 행사 안내
+- 참석 신청 및 일정 관리
+- 소그룹 모임 제안
 
-### 📖 리소스 허브
-- 개발 도구 및 라이브러리 모음
-- 학습 자료 큐레이션
-- 개인 북마크 관리
+### 📸 활동 사진
+- 예배, 모임, 수련회, 봉사 활동 사진 갤러리
+- 카테고리별 앨범 관리
+- 사진 업로드 및 공유
+- 개인정보 보호 가이드라인
 
 ## 🛠 기술 스택
 
@@ -49,125 +56,112 @@ GIL Community는 개발자들이 함께 학습하고, 프로젝트를 진행하�
 - **Framework**: Next.js 15.5.2 with App Router
 - **Language**: TypeScript
 - **Styling**: Tailwind CSS v4
-- **UI/UX**: Glassmorphism Design System
-- **State Management**: React Context API
-- **Performance**: Dynamic Imports, Turbopack
+- **Build Tool**: Turbopack
+- **Package Manager**: pnpm
 
-### Design Features
-- 🎨 **Glassmorphism Effects**: 백드롭 블러와 반투명 효과
-- 🌗 **Dark/Light Theme**: 테마 토글 기능
-- 📱 **Responsive Design**: 모든 디바이스 지원
-- ✨ **Smooth Animations**: 호버 효과 및 전환 애니메이션
+### 디자인 시스템
+- **UI Components**: 커스텀 GlassCard 컴포넌트
+- **Theme**: 라이트/다크 모드 지원
+- **Typography**: 시스템 폰트 기반 최적화
+- **Color Scheme**: 블루/퍼플 그라데이션 기반
+- **Accessibility**: 키보드 네비게이션 및 접근성 지원
 
 ## 📁 프로젝트 구조
 
 ```
 frontend/
 ├── src/
-│   ├── app/                    # Next.js App Router
-│   │   ├── layout.tsx         # 루트 레이아웃
-│   │   ├── page.tsx           # 대시보드 메인
-│   │   ├── challenges/        # 챌린지 페이지
-│   │   ├── community/         # 커뮤니티 페이지
-│   │   ├── learning/          # 학습 페이지
-│   │   ├── mentoring/         # 멘토링 페이지
-│   │   ├── projects/          # 프로젝트 페이지
-│   │   └── resources/         # 리소스 페이지
+│   ├── app/                    # Next.js App Router 페이지
+│   │   ├── page.tsx           # 대시보드 (홈)
+│   │   ├── community/         # 공동체 페이지
+│   │   ├── sermons/           # 설교 페이지
+│   │   ├── bible/             # 성경 읽기 페이지
+│   │   ├── prayer/            # 기도 제목 페이지
+│   │   ├── events/            # 모임 & 행사 페이지
+│   │   └── gallery/           # 활동 사진 페이지
 │   ├── components/            # 재사용 가능한 컴포넌트
-│   │   ├── ui/               # UI 컴포넌트
-│   │   │   └── GlassCard.tsx # 글래스 카드 컴포넌트
-│   │   ├── Header.tsx        # 헤더 컴포넌트
-│   │   ├── NewSidebar.tsx    # 사이드바 네비게이션
-│   │   └── DashboardBlocks.tsx
-│   ├── contexts/             # React Context
-│   │   └── ThemeContext.tsx  # 테마 관리
-│   └── layout/               # 레이아웃 컴포넌트
+│   │   ├── DashboardBlocks.tsx
+│   │   ├── Header.tsx
+│   │   ├── NewSidebar.tsx
+│   │   └── ui/
+│   │       └── GlassCard.tsx
+│   ├── contexts/              # React Context 관리
+│   │   └── ThemeContext.tsx
+│   └── layout/                # 레이아웃 컴포넌트
 │       └── DashboardLayout.tsx
-├── public/                   # 정적 파일
-├── package.json             # 의존성 관리
-└── tailwind.config.js       # Tailwind 설정
 ```
 
-## 🚀 시작하기
+## 🎨 디자인 개선사항
 
-### 사전 요구사항
-- Node.js 18 이상
-- pnpm (권장) 또는 npm
+### Before (기존 문제점)
+- ❌ 과도한 glassmorphism 효과로 가독성 저하
+- ❌ 불필요한 애니메이션과 blur 효과로 성능 이슈
+- ❌ 일관성 없는 컬러 스킴과 스타일링
+- ❌ 개발자 중심 내용 (부적절한 컨텍스트)
 
-### 설치 및 실행
+### After (개선된 사항)
+- ✅ 깔끔한 카드 기반 디자인으로 가독성 향상
+- ✅ 성능 최적화된 애니메이션과 트랜지션
+- ✅ 일관된 블루/퍼플 컬러 시스템
+- ✅ 온누리교회 청년부에 특화된 기능과 콘텐츠
+- ✅ 아이콘 제거 후 텍스트 기반 깔끔한 UI
+- ✅ 접근성 개선 (키보드 네비게이션, 색상 대비)
 
+## 🚀 개발 및 실행
+
+### 설치
 ```bash
-# 의존성 설치
 cd frontend
 pnpm install
+```
 
-# 개발 서버 실행
+### 개발 서버 실행
+```bash
 pnpm dev
+```
 
-# 빌드
+### 빌드
+```bash
 pnpm build
-
-# 프로덕션 실행
-pnpm start
 ```
 
-브라우저에서 [http://localhost:3000](http://localhost:3000)을 열어 확인하세요.
+## 📊 현재 개발 상태
 
-## 🎨 디자인 시스템
+### ✅ 완료된 기능
+- [x] 전체 페이지 레이아웃 및 네비게이션
+- [x] 대시보드 (신앙 활동 현황, 오늘의 말씀, 성경 읽기 진도)
+- [x] 공동체 페이지 (게시글, 기도 요청, 소그룹 안내)
+- [x] 설교 페이지 (설교 목록, 카테고리, 추천 시리즈)
+- [x] 성경 읽기 페이지 (읽기 계획, 진도 추적)
+- [x] 기도 제목 페이지 (요청, 응답, 분류)
+- [x] 모임 & 행사 페이지 (일정, 참석 관리)
+- [x] 활동 사진 페이지 (갤러리, 앨범 관리)
+- [x] 반응형 디자인 (모바일, 태블릿, 데스크톱)
+- [x] 다크/라이트 모드 테마
+- [x] CSS 최적화 및 성능 개선
 
-### Glassmorphism 구현
-```css
-/* 기본 글래스 효과 */
-backdrop-filter: blur(16px);
-background: rgba(255, 255, 255, 0.2);
-border: 1px solid rgba(255, 255, 255, 0.3);
-
-/* 호버 효과 */
-hover:backdrop-filter: blur(20px);
-hover:transform: scale(1.02);
-```
-
-### 컬러 팔레트
-- **Primary**: Blue-Purple Gradient
-- **Secondary**: Green Accent
-- **Background**: Multi-layer Gradient
-- **Glass**: Semi-transparent White/Dark
-
-## 📱 반응형 디자인
-
-- **Desktop**: 1200px 이상 - 풀 레이아웃
-- **Tablet**: 768px - 1199px - 조정된 그리드
-- **Mobile**: 767px 이하 - 스택 레이아웃
-
-## 🔧 개발 중인 기능
-
-- [ ] 모바일 반응형 최적화
-- [ ] 에러 핸들링 개선
+### 🔄 진행 중인 작업
+- [ ] 백엔드 API 연동
 - [ ] 사용자 인증 시스템
-- [ ] 실시간 알림
-- [ ] PWA 지원
+- [ ] 실시간 알림 기능
 
-## 🐛 알려진 이슈
+### 📋 향후 계획
+- [ ] 모바일 앱 PWA 지원
+- [ ] 오프라인 기능 (성경 읽기, 기도 노트)
+- [ ] 푸시 알림 (모임 일정, 기도 요청)
+- [ ] 관리자 대시보드
+- [ ] 데이터 백업 및 복원
 
-- ✅ Hydration 에러 해결 (dynamic import 적용)
-- ✅ 성능 최적화 완료 (1320ms → 1046ms)
-- 🔄 브라우저 호환성 테스트 진행 중
+## 👥 대상 사용자
 
-## 🤝 기여하기
+- **주 대상**: 온누리교회 청년부 (20-30대)
+- **사용 목적**: 신앙 성장, 공동체 교제, 영적 활동 관리
+- **접근 환경**: 모바일 우선, 데스크톱 지원
 
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+## 📞 연락처
 
-## 📄 라이선스
-
-이 프로젝트는 MIT 라이선스 하에 있습니다. 자세한 내용은 [LICENSE](LICENSE) 파일을 참조하세요.
-
-## 📞 문의
-
-프로젝트 관련 문의나 피드백은 언제든 환영합니다!
+프로젝트 관련 문의나 개선사항은 길 공동체 리더진에게 연락해 주세요.
 
 ---
-Made with ❤️ by GIL Community Team
+
+*하나님의 은혜 가운데 함께 성장하는 길 공동체* 🙏

@@ -15,7 +15,9 @@ const DashboardLayout = dynamic(() => import('@/layout/DashboardLayout'), {
 })
 
 const GlassCard = dynamic(() => import('@/components/ui/GlassCard'))
-
+            <div className="w-12 h-12 mx-auto mb-4 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center">
+              <span className="text-white font-bold">멤버</span>
+            </div>
 export default function Community() {
   return (
     <DashboardLayout>
@@ -23,15 +25,19 @@ export default function Community() {
         <div>
           <h1 className="text-3xl font-bold text-gray-800 mb-2">커뮤니티</h1>
           <p className="text-gray-600">개발자들과 소통하고 지식을 공유하세요.</p>
-        </div>
-        
+            <div className="w-12 h-12 mx-auto mb-4 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center">
+              <span className="text-white font-bold">기도</span>
+            </div>
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           <GlassCard size="md">
             <h3 className="text-lg font-semibold text-gray-800 mb-3">질문 & 답변</h3>
             <p className="text-gray-600 mb-4">개발 중 궁금한 점들을 질문하고 답변받으세요.</p>
             <button className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors">
               질문하기
-            </button>
+            <div className="w-12 h-12 mx-auto mb-4 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center">
+              <span className="text-white font-bold">그룹</span>
+            </div>
           </GlassCard>
 
           <GlassCard size="md">
@@ -39,7 +45,9 @@ export default function Community() {
             <p className="text-gray-600 mb-4">완성한 프로젝트를 공유하고 피드백받으세요.</p>
             <button className="px-4 py-2 bg-purple-500 text-white rounded-lg hover:bg-purple-600 transition-colors">
               프로젝트 등록
-            </button>
+            <div className="w-12 h-12 mx-auto mb-4 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center">
+              <span className="text-white font-bold">모임</span>
+            </div>
           </GlassCard>
 
           <GlassCard size="md">
