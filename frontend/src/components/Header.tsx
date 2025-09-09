@@ -42,11 +42,12 @@ export default function Header() {
           {/* Notifications */}
           <div className="relative">
             <button
-              className="px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors duration-200 relative text-sm"
+              className="px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors duration-200 relative text-sm flex items-center space-x-2"
               onClick={() => setNotifications(0)}
             >
               <span className="text-xl">🔔</span>
-              기도 요청
+              <span>기도 요청</span>
+              {notifications > 0 && (
                 <span className="absolute -top-1 -right-1 w-5 h-5 bg-red-500 rounded-full text-xs text-white flex items-center justify-center font-medium">
                   {notifications}
                 </span>
@@ -57,28 +58,33 @@ export default function Header() {
           {/* Theme Toggle */}
           <button
             onClick={toggleTheme}
-            <button className="px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors duration-200 flex items-center space-x-2">
+            className="px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors duration-200 flex items-center space-x-2"
             title={isDark ? '라이트 모드로 전환' : '다크 모드로 전환'}
           >
             <span className="text-xl">{isDark ? '☀️' : '🌙'}</span>
+            <span className="hidden md:inline text-sm">
+              {isDark ? '라이트 모드' : '다크 모드'}
+            </span>
           </button>
 
           {/* User Profile */}
           <div className="flex items-center space-x-3 pl-4 border-l border-gray-200">
             <div className="relative">
-            className="px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors duration-200 text-sm"
+              <div className="w-8 h-8 rounded-full bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center">
                 <span className="text-white text-sm font-medium">김</span>
               </div>
-            {isDark ? '라이트 모드' : '다크 모드'}
             </div>
             <div className="hidden sm:block">
               <p className="text-sm font-semibold text-gray-900">김민준</p>
-              <p className="text-xs text-gray-500">개발자</p>
+              <p className="text-xs text-gray-500">길 공동체</p>
             </div>
           </div>
 
           {/* Settings */}
-          <button className="p-2 rounded-lg hover:bg-gray-100 transition-colors duration-200">
+          <button
+            className="p-2 rounded-lg hover:bg-gray-100 transition-colors duration-200"
+            title="설정"
+          >
             <span className="text-xl">⚙️</span>
           </button>
         </div>
@@ -86,6 +92,3 @@ export default function Header() {
     </header>
   )
 }
-
-          <button className="px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors duration-200 text-sm">
-            설정
