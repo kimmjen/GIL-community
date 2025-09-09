@@ -2,324 +2,212 @@
 
 import dynamic from 'next/dynamic'
 
-const DashboardLayout = dynamic(() => import('@/layout/DashboardLayout'), { ssr: false })
+const DashboardLayout = dynamic(() => import('@/layout/DashboardLayout'), {
+  ssr: false,
+  loading: () => (
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 flex items-center justify-center">
+      <div className="text-center">
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-500 mx-auto mb-4"></div>
+        <p className="text-gray-600">로딩 중...</p>
+      </div>
+    </div>
+  )
+})
+
 const GlassCard = dynamic(() => import('@/components/ui/GlassCard'))
 
 export default function Resources() {
   const resourceCategories = [
     {
       id: 1,
-      title: '개발 도구',
-      description: '개발에 필요한 필수 도구들',
+      title: '성경 읽기 도구',
+      description: '말씀 읽기와 묵상에 도움이 되는 자료들',
       icon: 'from-blue-500 to-blue-600',
-      count: 24,
+      count: 12,
       resources: [
-        { name: 'VS Code', description: '무료 코드 에디터', url: 'https://code.visualstudio.com/', type: '도구' },
-        { name: 'GitHub', description: '코드 버전 관리', url: 'https://github.com/', type: '플랫폼' },
-        { name: 'Postman', description: 'API 테스팅 도구', url: 'https://postman.com/', type: '도구' },
-        { name: 'Figma', description: 'UI/UX 디자인 도구', url: 'https://figma.com/', type: '디자인' }
+        { name: '개역개정 성경', description: '온라인 성경 읽기', url: 'https://bible.com/', type: '성경' },
+        { name: '매일성경', description: '일일 묵상 자료', url: '#', type: '묵상' },
+        { name: '큐티 나침반', description: '체계적인 큐티 가이드', url: '#', type: '큐티' },
+        { name: '성경 지도', description: '성경 지리 정보', url: '#', type: '자료' }
       ]
     },
     {
       id: 2,
-      title: '학습 자료',
-      description: '프로그래밍 학습 리소스',
+      title: '찬양 및 예배',
+      description: '찬양과 예배에 필요한 리소스',
       icon: 'from-green-500 to-green-600',
       count: 18,
       resources: [
-        { name: 'MDN Web Docs', description: '웹 기술 문서', url: 'https://developer.mozilla.org/', type: '문서' },
-        { name: 'freeCodeCamp', description: '무료 프로그래밍 강의', url: 'https://freecodecamp.org/', type: '강의' },
-        { name: 'Codecademy', description: '인터랙티브 코딩 학습', url: 'https://codecademy.com/', type: '강의' },
-        { name: 'Stack Overflow', description: '개발자 Q&A 커뮤니티', url: 'https://stackoverflow.com/', type: '커뮤니티' }
+        { name: '새찬송가', description: '찬송가 악보와 음원', url: '#', type: '찬양' },
+        { name: 'CCM 악보', description: '현대 기독교 음악 악보', url: '#', type: '악보' },
+        { name: '예배 순서지', description: '주일 예배 순서', url: '#', type: '예배' },
+        { name: '성가대 연습곡', description: '성가대 연습 자료', url: '#', type: '연습' }
       ]
     },
     {
       id: 3,
-      title: '프레임워크',
-      description: '인기있는 개발 프레임워크',
+      title: '신앙 서적',
+      description: '신앙 성장에 도움이 되는 추천 도서',
       icon: 'from-purple-500 to-purple-600',
-      count: 15,
+      count: 25,
       resources: [
-        { name: 'React', description: '사용자 인터페이스 라이브러리', url: 'https://reactjs.org/', type: '라이브러리' },
-        { name: 'Next.js', description: 'React 풀스택 프레임워크', url: 'https://nextjs.org/', type: '프레임워크' },
-        { name: 'Vue.js', description: '프로그레시브 프레임워크', url: 'https://vuejs.org/', type: '프레임워크' },
-        { name: 'Express', description: 'Node.js 웹 프레임워크', url: 'https://expressjs.com/', type: '프레임워크' }
+        { name: '순전한 기독교', description: 'C.S. 루이스 저', url: '#', type: '도서' },
+        { name: '기도', description: 'O.헬리스비 저', url: '#', type: '도서' },
+        { name: '묵상과 기도', description: '존 스토트 저', url: '#', type: '도서' },
+        { name: '청년을 위한 QT', description: '큐티 입문서', url: '#', type: '도서' }
       ]
     },
     {
       id: 4,
-      title: '유틸리티',
-      description: '개발 효율성을 높이는 도구들',
+      title: '선교 및 전도',
+      description: '선교와 전도에 필요한 자료들',
       icon: 'from-orange-500 to-orange-600',
-      count: 12,
+      count: 8,
       resources: [
-        { name: 'npm', description: 'Node.js 패키지 매니저', url: 'https://npmjs.com/', type: '도구' },
-        { name: 'Yarn', description: '빠른 패키지 매니저', url: 'https://yarnpkg.com/', type: '도구' },
-        { name: 'Prettier', description: '코드 포매터', url: 'https://prettier.io/', type: '도구' },
-        { name: 'ESLint', description: 'JavaScript 린터', url: 'https://eslint.org/', type: '도구' }
+        { name: '복음 소책자', description: '전도용 복음 자료', url: '#', type: '전도' },
+        { name: '간증 가이드', description: '간증 작성법', url: '#', type: '간증' },
+        { name: '선교지 소식', description: '해외 선교지 현황', url: '#', type: '선교' },
+        { name: '전도 훈련 자료', description: '효과적인 전도법', url: '#', type: '훈련' }
+      ]
+    },
+    {
+      id: 5,
+      title: '청년 사역',
+      description: '청년들을 위한 특별 자료',
+      icon: 'from-teal-500 to-teal-600',
+      count: 15,
+      resources: [
+        { name: '청년 큐티', description: '청년 맞춤 묵상 자료', url: '#', type: '큐티' },
+        { name: '진로 상담', description: '기독교적 진로 지도', url: '#', type: '상담' },
+        { name: '결혼 준비', description: '기독교 결혼관', url: '#', type: '교육' },
+        { name: '청년 리더십', description: '청년 리더 양성', url: '#', type: '리더십' }
+      ]
+    },
+    {
+      id: 6,
+      title: '교육 자료',
+      description: '성경 공부와 교육 프로그램',
+      icon: 'from-red-500 to-red-600',
+      count: 20,
+      resources: [
+        { name: '새가족 교육', description: '새신자 교육 과정', url: '#', type: '교육' },
+        { name: '성경 공부 교재', description: '체계적인 성경 학습', url: '#', type: '교재' },
+        { name: '제자훈련', description: '제자도 훈련 과정', url: '#', type: '훈련' },
+        { name: '소그룹 가이드', description: '소그룹 운영 매뉴얼', url: '#', type: '가이드' }
       ]
     }
   ]
 
   const popularResources = [
-    {
-      id: 1,
-      title: 'React 공식 문서',
-      description: 'React의 모든 것을 배울 수 있는 공식 문서',
-      url: 'https://reactjs.org/',
-      category: '문서',
-      rating: 4.9,
-      views: '1.2M',
-      color: 'from-blue-500 to-blue-600'
-    },
-    {
-      id: 2,
-      title: 'JavaScript.info',
-      description: '모던 JavaScript 튜토리얼',
-      url: 'https://javascript.info/',
-      category: '튜토리얼',
-      rating: 4.8,
-      views: '890K',
-      color: 'from-yellow-500 to-yellow-600'
-    },
-    {
-      id: 3,
-      title: 'CSS-Tricks',
-      description: 'CSS 팁과 트릭 모음',
-      url: 'https://css-tricks.com/',
-      category: '가이드',
-      rating: 4.7,
-      views: '650K',
-      color: 'from-green-500 to-green-600'
-    },
-    {
-      id: 4,
-      title: 'GitHub Awesome Lists',
-      description: '카테고리별 최고의 라이브러리 모음',
-      url: 'https://github.com/sindresorhus/awesome',
-      category: '모음집',
-      rating: 4.9,
-      views: '2.1M',
-      color: 'from-purple-500 to-purple-600'
-    }
-  ]
-
-  const bookmarks = [
-    { id: 1, name: 'React 공식 문서', type: '문서', added: '2일 전' },
-    { id: 2, name: 'TypeScript 핸드북', type: '가이드', added: '1주 전' },
-    { id: 3, name: 'Tailwind CSS', type: '프레임워크', added: '3일 전' },
-    { id: 4, name: 'Next.js 튜토리얼', type: '튜토리얼', added: '5일 전' }
+    { name: '오늘의 말씀', category: '성경', downloads: 1240, rating: 4.9 },
+    { name: '새찬송가 앱', category: '찬양', downloads: 890, rating: 4.8 },
+    { name: '기도 노트', category: '기도', downloads: 756, rating: 4.7 },
+    { name: '청년 큐티', category: '묵상', downloads: 634, rating: 4.6 },
   ]
 
   return (
     <DashboardLayout>
       <div className="space-y-6">
-        <div className="flex justify-between items-center">
+        <div className="flex items-center justify-between">
           <div>
-            <h1 className="text-3xl font-bold text-gray-800 mb-2">리소스</h1>
-            <p className="text-gray-600">개발에 필요한 모든 자료를 한곳에서 찾아보세요.</p>
+            <h1 className="text-3xl font-bold text-gray-800 mb-2">신앙 자료실</h1>
+            <p className="text-gray-600">신앙 생활에 도움이 되는 다양한 자료들을 모았습니다.</p>
           </div>
-          <div className="flex space-x-3">
-            <button className="px-4 py-2 bg-white/20 text-gray-700 rounded-lg hover:bg-white/30 transition-all duration-300 border border-white/30">
-              북마크
-            </button>
-            <button className="px-6 py-3 bg-gradient-to-r from-indigo-500 to-purple-600 text-white rounded-xl hover:shadow-lg transition-all duration-300 font-medium">
-              리소스 추가
-            </button>
-          </div>
+          <button className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors">
+            자료 추천하기
+          </button>
         </div>
-
-        {/* Search Bar */}
-        <GlassCard size="md">
-          <div className="flex items-center space-x-4">
-            <div className="flex-1">
-              <input
-                type="text"
-                placeholder="리소스를 검색해보세요..."
-                className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-transparent placeholder-gray-500"
-              />
-            </div>
-            <div className="flex space-x-2">
-              <select className="px-4 py-3 bg-white/10 border border-white/20 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500/50 text-gray-700">
-                <option>모든 카테고리</option>
-                <option>개발 도구</option>
-                <option>학습 자료</option>
-                <option>프레임워크</option>
-                <option>유틸리티</option>
-              </select>
-              <button className="px-6 py-3 bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-xl hover:shadow-lg transition-all duration-300 font-medium">
-                검색
-              </button>
-            </div>
-          </div>
-        </GlassCard>
 
         {/* Popular Resources */}
-        <div>
-          <h2 className="text-xl font-semibold text-gray-800 mb-4">인기 리소스</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {popularResources.map((resource) => (
-              <GlassCard key={resource.id} size="md" className="group cursor-pointer">
-                <div className="relative">
-                  <div className={`absolute top-0 right-0 w-16 h-16 bg-gradient-to-br ${resource.color}/20 rounded-full blur-xl group-hover:blur-2xl transition-all duration-300`}></div>
-                  
-                  <div className="relative z-10">
-                    <div className={`w-12 h-12 mb-4 bg-gradient-to-r ${resource.color} rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300`}>
-                      <div className="w-6 h-6 bg-white/30 rounded"></div>
-                    </div>
-                    
-                    <h3 className="font-semibold text-gray-800 mb-2 group-hover:text-blue-600 transition-colors duration-300">
-                      {resource.title}
-                    </h3>
-                    <p className="text-sm text-gray-600 mb-3 line-clamp-2">
-                      {resource.description}
-                    </p>
-                    
-                    <div className="flex justify-between items-center mb-3">
-                      <span className="px-2 py-1 bg-white/20 text-gray-700 rounded-md text-xs font-medium border border-white/30">
-                        {resource.category}
-                      </span>
-                      <div className="flex items-center space-x-1 text-xs text-gray-600">
-                        <div className="w-3 h-3 bg-yellow-400 rounded-full"></div>
-                        <span>{resource.rating}</span>
-                      </div>
-                    </div>
-                    
-                    <p className="text-xs text-gray-500 mb-3">조회수: {resource.views}</p>
-                    
-                    <button className="w-full py-2 text-blue-600 hover:bg-blue-50/50 rounded-lg transition-all duration-300 font-medium text-sm">
-                      바로가기
-                    </button>
-                  </div>
-                </div>
-              </GlassCard>
-            ))}
-          </div>
-        </div>
-
-        {/* Resource Categories */}
-        <div>
-          <h2 className="text-xl font-semibold text-gray-800 mb-4">카테고리별 리소스</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {resourceCategories.map((category) => (
-              <GlassCard key={category.id} size="lg" className="group cursor-pointer">
-                <div className="relative">
-                  <div className={`absolute top-0 right-0 w-20 h-20 bg-gradient-to-br ${category.icon}/20 rounded-full blur-xl group-hover:blur-2xl transition-all duration-300`}></div>
-                  
-                  <div className="relative z-10">
-                    <div className="flex items-start justify-between mb-4">
-                      <div className={`w-14 h-14 bg-gradient-to-r ${category.icon} rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300`}>
-                        <div className="w-7 h-7 bg-white/30 rounded-lg"></div>
-                      </div>
-                      <div className="px-3 py-1 bg-white/20 text-gray-700 rounded-full text-sm font-medium border border-white/30">
-                        {category.count}개
-                      </div>
-                    </div>
-                    
-                    <h3 className="text-lg font-semibold text-gray-800 mb-2 group-hover:text-blue-600 transition-colors duration-300">
-                      {category.title}
-                    </h3>
-                    <p className="text-gray-600 mb-4">
-                      {category.description}
-                    </p>
-                    
-                    <div className="space-y-2 mb-4">
-                      {category.resources.map((resource, index) => (
-                        <div key={index} className="flex justify-between items-center p-2 bg-white/10 rounded-lg hover:bg-white/20 transition-all duration-300">
-                          <div className="flex-1">
-                            <h4 className="font-medium text-gray-800 text-sm">{resource.name}</h4>
-                            <p className="text-xs text-gray-600">{resource.description}</p>
-                          </div>
-                          <span className="px-2 py-1 bg-white/20 text-gray-600 rounded text-xs">
-                            {resource.type}
-                          </span>
-                        </div>
-                      ))}
-                    </div>
-                    
-                    <button className="w-full py-3 text-blue-600 hover:bg-blue-50/50 rounded-lg transition-all duration-300 font-medium">
-                      전체 보기
-                    </button>
-                  </div>
-                </div>
-              </GlassCard>
-            ))}
-          </div>
-        </div>
-
-        {/* My Bookmarks */}
-        <GlassCard size="md">
-          <div className="flex justify-between items-center mb-4">
-            <h2 className="text-xl font-semibold text-gray-800">내 북마크</h2>
-            <button className="text-blue-600 hover:text-blue-700 text-sm font-medium">
-              전체 보기
-            </button>
-          </div>
-          
-          <div className="space-y-3">
-            {bookmarks.map((bookmark) => (
-              <div key={bookmark.id} className="flex items-center justify-between p-3 bg-white/10 rounded-lg hover:bg-white/20 transition-all duration-300 group cursor-pointer">
-                <div className="flex items-center space-x-3">
-                  <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-blue-600 rounded-lg flex items-center justify-center">
-                    <div className="w-4 h-4 bg-white/30 rounded"></div>
-                  </div>
+        <GlassCard size="lg">
+          <h2 className="text-xl font-semibold text-gray-900 mb-6">인기 자료</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            {popularResources.map((resource, index) => (
+              <div key={index} className="p-4 bg-gradient-to-br from-gray-50 to-gray-100 rounded-lg border border-gray-200 hover:shadow-md transition-shadow">
+                <div className="space-y-3">
                   <div>
-                    <h4 className="font-medium text-gray-800 group-hover:text-blue-600 transition-colors duration-300">
-                      {bookmark.name}
-                    </h4>
-                    <p className="text-xs text-gray-600">{bookmark.type} • {bookmark.added}</p>
+                    <h4 className="font-semibold text-gray-900">{resource.name}</h4>
+                    <p className="text-sm text-gray-600">{resource.category}</p>
                   </div>
+                  <div className="flex items-center justify-between text-sm">
+                    <span className="text-gray-600">📥 {resource.downloads}</span>
+                    <div className="flex items-center space-x-1">
+                      <span className="text-yellow-500">⭐</span>
+                      <span className="text-gray-600">{resource.rating}</span>
+                    </div>
+                  </div>
+                  <button className="w-full px-3 py-2 bg-blue-500 text-white rounded-lg text-sm hover:bg-blue-600 transition-colors">
+                    다운로드
+                  </button>
                 </div>
-                <button className="text-gray-400 hover:text-red-500 transition-colors duration-300">
-                  <div className="w-4 h-4 bg-current rounded"></div>
-                </button>
               </div>
             ))}
           </div>
         </GlassCard>
 
-        {/* Stats */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-          <GlassCard size="md">
-            <div className="text-center">
-              <div className="w-12 h-12 mx-auto mb-3 bg-gradient-to-r from-blue-500 to-blue-600 rounded-xl flex items-center justify-center">
-                <div className="w-6 h-6 bg-white/30 rounded"></div>
-              </div>
-              <h3 className="font-semibold text-gray-800 mb-1">전체 리소스</h3>
-              <p className="text-2xl font-bold text-blue-600">1,247</p>
-            </div>
-          </GlassCard>
+        {/* Resource Categories */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {resourceCategories.map((category) => (
+            <GlassCard key={category.id} size="md">
+              <div className="space-y-4">
+                <div className="flex items-center justify-between">
+                  <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${category.icon} flex items-center justify-center`}>
+                    <span className="text-white font-bold text-sm">📚</span>
+                  </div>
+                  <span className="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded font-medium">
+                    {category.count}개
+                  </span>
+                </div>
 
-          <GlassCard size="md">
-            <div className="text-center">
-              <div className="w-12 h-12 mx-auto mb-3 bg-gradient-to-r from-green-500 to-green-600 rounded-xl flex items-center justify-center">
-                <div className="w-6 h-6 bg-white/30 rounded-full"></div>
-              </div>
-              <h3 className="font-semibold text-gray-800 mb-1">카테고리</h3>
-              <p className="text-2xl font-bold text-green-600">12</p>
-            </div>
-          </GlassCard>
+                <div>
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2">{category.title}</h3>
+                  <p className="text-gray-600 text-sm mb-4">{category.description}</p>
+                </div>
 
-          <GlassCard size="md">
-            <div className="text-center">
-              <div className="w-12 h-12 mx-auto mb-3 bg-gradient-to-r from-purple-500 to-purple-600 rounded-xl flex items-center justify-center">
-                <div className="w-6 h-6 bg-white/30 rounded-lg"></div>
-              </div>
-              <h3 className="font-semibold text-gray-800 mb-1">북마크</h3>
-              <p className="text-2xl font-bold text-purple-600">28</p>
-            </div>
-          </GlassCard>
+                <div className="space-y-2">
+                  {category.resources.slice(0, 3).map((resource, index) => (
+                    <div key={index} className="flex items-center justify-between p-2 bg-gray-50 rounded-lg">
+                      <div>
+                        <p className="text-sm font-medium text-gray-900">{resource.name}</p>
+                        <p className="text-xs text-gray-600">{resource.description}</p>
+                      </div>
+                      <span className="px-2 py-1 bg-blue-100 text-blue-700 text-xs rounded">
+                        {resource.type}
+                      </span>
+                    </div>
+                  ))}
+                </div>
 
-          <GlassCard size="md">
-            <div className="text-center">
-              <div className="w-12 h-12 mx-auto mb-3 bg-gradient-to-r from-orange-500 to-orange-600 rounded-xl flex items-center justify-center">
-                <div className="w-6 h-6 bg-white/30 rounded-md"></div>
+                <button className="w-full px-4 py-2 bg-blue-500 text-white rounded-lg text-sm hover:bg-blue-600 transition-colors">
+                  전체 보기
+                </button>
               </div>
-              <h3 className="font-semibold text-gray-800 mb-1">새로운 리소스</h3>
-              <p className="text-2xl font-bold text-orange-600">15</p>
-            </div>
-          </GlassCard>
+            </GlassCard>
+          ))}
         </div>
+
+        {/* Resource Stats */}
+        <GlassCard size="lg">
+          <h2 className="text-xl font-semibold text-gray-900 mb-6">자료실 현황</h2>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            <div className="text-center p-4 bg-blue-50 rounded-lg">
+              <div className="text-2xl font-bold text-blue-600 mb-1">128</div>
+              <div className="text-sm text-gray-600">전체 자료</div>
+            </div>
+            <div className="text-center p-4 bg-green-50 rounded-lg">
+              <div className="text-2xl font-bold text-green-600 mb-1">24</div>
+              <div className="text-sm text-gray-600">이번 주 추가</div>
+            </div>
+            <div className="text-center p-4 bg-yellow-50 rounded-lg">
+              <div className="text-2xl font-bold text-yellow-600 mb-1">3.2K</div>
+              <div className="text-sm text-gray-600">총 다운로드</div>
+            </div>
+            <div className="text-center p-4 bg-purple-50 rounded-lg">
+              <div className="text-2xl font-bold text-purple-600 mb-1">4.7</div>
+              <div className="text-sm text-gray-600">평균 평점</div>
+            </div>
+          </div>
+        </GlassCard>
       </div>
     </DashboardLayout>
   )

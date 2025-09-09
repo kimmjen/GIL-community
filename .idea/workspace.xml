@@ -5,21 +5,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e222b18e-a5ba-477c-af9a-64e623514714" name="변경" comment="change">
-      <change afterPath="$PROJECT_DIR$/frontend/tailwind.config.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/SIDEBAR_DESIGN_GUIDE.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/NewPrayerForm.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/data/mockBibleData.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/data/mockNotificationData.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/data/mockPrayerData.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/types/bible.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/types/notifications.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/types/prayer.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/public/file.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/public/globe.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/public/next.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/public/vercel.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/public/window.svg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/app/bible/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/bible/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/challenges/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/challenges/page.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/app/community/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/community/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/events/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/events/page.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/app/gallery/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/gallery/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/learning/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/learning/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/mentoring/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/mentoring/page.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/app/prayer/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/prayer/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/sermons/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/sermons/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/DashboardBlocks.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/DashboardBlocks.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/projects/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/projects/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/resources/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/resources/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Header.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/NewSidebar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/NewSidebar.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,8 +99,17 @@
       <updated>1757333710432</updated>
       <workItem from="1757333711588" duration="626000" />
       <workItem from="1757335041891" duration="5438000" />
-      <workItem from="1757411113664" duration="875000" />
+      <workItem from="1757411113664" duration="5420000" />
     </task>
+    <task id="LOCAL-00001" summary="change">
+      <option name="closed" value="true" />
+      <created>1757412591434</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1757412591434</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
